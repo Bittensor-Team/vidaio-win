@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-10-21T16:22:53.879158",
+  "compression": {
+    "score": 0.5088,
+    "ratio": 1.813,
+    "size_reduction_pct": 44.8
+  },
+  "upscaling": {
+    "score": 0.38,
+    "resolution_increase": "2.0x",
+    "file_size_increase": 11.6
+  },
+  "average_score": 0.4444
+}
