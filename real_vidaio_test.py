@@ -99,7 +99,7 @@ def upscale_frame_real_esrgan(frame_path, output_path, worker_url):
         log(f"❌ Worker error: {e}")
         return False
 
-def upscale_video_real_esrgan_chunked(input_video, output_video, target_w, target_h, task_name, num_workers=5):
+def upscale_video_real_esrgan_chunked(input_video, output_video, target_w, target_h, task_name, num_workers=6):
     """Upscale video using Real-ESRGAN workers with chunked approach"""
     log(f"🤖 REAL-ESRGAN CHUNKED {task_name}: {target_w}x{target_h}")
     
@@ -109,14 +109,14 @@ def upscale_video_real_esrgan_chunked(input_video, output_video, target_w, targe
     
     # Extract frames
     frames_dir = f"/tmp/frames_{task_name}_{int(time.time())}"
-    max_frames = min(50, info['total_frames'])  # More frames for better testing
+    max_frames = info['total_frames']  # Process all frames for full duration
     extracted = extract_frames(input_video, frames_dir, max_frames)
     
     if extracted == 0:
         log("❌ No frames extracted")
         return False
     
-    # Setup workers
+    # Setup workers (6 workers on ports 8090-8095)
     worker_urls = [f"http://127.0.0.1:{8090 + i}" for i in range(num_workers)]
     
     # Check worker health
@@ -240,7 +240,6 @@ def upscale_video_real_esrgan_chunked(input_video, output_video, target_w, targe
         cmd = [
             'ffmpeg', '-y', '-i', input_path,
             '-vf', f'scale={target_w}:{target_h}',
-            '-c:v', 'libx264', '-preset', 'fast', '-crf', '18',
             output_path
         ]
         subprocess.run(cmd, capture_output=True)
@@ -282,12 +281,12 @@ def upscale_video_real_esrgan_chunked(input_video, output_video, target_w, targe
         return False
 
 def test_real_vidaio_tasks():
-    """Test real Vidaio tasks with Real-ESRGAN"""
-    log("🚀 REAL VIDAIO SUBNET TEST (Real-ESRGAN)")
+    """Test real Vidaio tasks with Real-ESRGAN using 6 parallel workers"""
+    log("🚀 REAL VIDAIO SUBNET TEST (Real-ESRGAN + 6 Workers)")
     log("="*60)
     
-    input_video = "/workspace/vidaio-subnet/elk.mp4"
-    output_dir = "/workspace/vidaio-subnet/real_vidaio_tests"
+    input_video = "/workspace/vidaio-win/elk.mp4"
+    output_dir = "/workspace/vidaio-win/real_vidaio_tests"
     os.makedirs(output_dir, exist_ok=True)
     
     # Get original video info
@@ -315,7 +314,7 @@ def test_real_vidaio_tasks():
     log("TEST 2: 10-SECOND VIDEO (Real-ESRGAN, Limited Frames)")
     log(f"{'='*60}")
     
-    log(f"\n📊 REAL UPSCALING TASKS (10s video, 50 frames):")
+    log(f"\n📊 REAL UPSCALING TASKS (10s video, all frames):")
     upscale_video_real_esrgan_chunked(input_video, os.path.join(output_dir, "real_hd24k_10s.mp4"), 3840, 2160, "HD24K_10s")
     
     log(f"\n✅ Real Vidaio tests completed!")

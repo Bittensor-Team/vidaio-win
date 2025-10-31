@@ -1,18 +1,18 @@
 #!/bin/bash
 
-echo "🚀 Starting 5 Real-ESRGAN Worker Servers..."
+echo "🚀 Starting 6 Real-ESRGAN Worker Servers..."
 echo ""
 
-for i in {0..4}; do
+for i in {0..5}; do
     port=$((8090 + i))
-    echo "[Worker $((i+1))/5] Starting on port $port..."
-    python /workspace/vidaio-subnet/upscaler_worker_server.py --port $port > /tmp/worker_$port.log 2>&1 &
+    echo "[Worker $((i+1))/6] Starting on port $port..."
+    /workspace/miniconda/envs/vidaio/bin/python /workspace/vidaio-win/upscaler_worker_server.py --port $port > /tmp/worker_$port.log 2>&1 &
     sleep 2
 done
 
 echo ""
-echo "✅ All 5 workers started!"
-echo "   Ports: 8090, 8091, 8092, 8093, 8094"
+echo "✅ All 6 workers started!"
+echo "   Ports: 8090, 8091, 8092, 8093, 8094, 8095"
 echo ""
 echo "Monitor logs with:"
 echo "   tail -f /tmp/worker_*.log"

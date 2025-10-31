@@ -1,0 +1,50 @@
+{
+  "SD2HD (FFmpeg vs Original)": {
+    "pie_app_score": 0.4931090660612776,
+    "vidaio_score": {
+      "vmaf_score": 0.0,
+      "vmaf_percentage": 0.0,
+      "psnr": 0.0,
+      "ssim": 0.0,
+      "pie_app_score": 0.4947342245717611,
+      "quality_score": 0.0,
+      "length_score": 0.4154760001255846,
+      "pre_score": 0.2077380000627923,
+      "final_score": 0.01300681808985378,
+      "vmaf_check_passed": false
+    },
+    "status": "success"
+  },
+  "HD24K (FFmpeg vs Original)": {
+    "pie_app_score": 0.49139513127964285,
+    "vidaio_score": {
+      "vmaf_score": 0.0,
+      "vmaf_percentage": 0.0,
+      "psnr": 0.0,
+      "ssim": 0.0,
+      "pie_app_score": 0.4924932759715809,
+      "quality_score": 0.0,
+      "length_score": 0.4154760001255846,
+      "pre_score": 0.2077380000627923,
+      "final_score": 0.01300681808985378,
+      "vmaf_check_passed": false
+    },
+    "status": "success"
+  },
+  "4K28K (FFmpeg vs Original)": {
+    "pie_app_score": 0.49182781648525054,
+    "vidaio_score": {
+      "vmaf_score": 0.0,
+      "vmaf_percentage": 0.0,
+      "psnr": 0.0,
+      "ssim": 0.0,
+      "pie_app_score": 0.491210150997198,
+      "quality_score": 0.0,
+      "length_score": 0.4154760001255846,
+      "pre_score": 0.2077380000627923,
+      "final_score": 0.01300681808985378,
+      "vmaf_check_passed": false
+    },
+    "status": "success"
+  }
+}

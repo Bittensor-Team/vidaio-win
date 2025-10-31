@@ -1,0 +1,14 @@
+{
+  "HD24K_5s": {
+    "task": "HD24K_6w",
+    "duration": "5s",
+    "workers": 6,
+    "frames": 150,
+    "total_time": 8.854109048843384,
+    "frames_per_second": 16.941286714736652,
+    "seconds_per_frame": 0.059027393658955894,
+    "avg_inference_time": 0.17994912418108136,
+    "efficiency": 0.905106031531091,
+    "output_video": "/workspace/vidaio-win/real_vidaio_tests/HD24K_6w_5s_6w.mp4"
+  }
+}

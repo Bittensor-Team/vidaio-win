@@ -77,3 +77,17 @@ EOF
 
 
 cd /workspace/vidaio-subnet && source tier2_env/bin/activate && python3 local_validation.py --reference test_input.mp4 --processed test_compressed_av1.mp4 --task compression --vmaf-threshold 75 --verbose 2>&1 | tail -20
+
+
+export PATH="/workspace/miniconda/envs/vidaio/bin:$PATH" && which python && which pip && python --version
+
+
+/workspace/miniconda/envs/vidaio/bin/python test/test_tsdsr.py --pretrained_model_name_or_path checkpoint/sd3 -i imgs/test/elk_frame.png -o outputs/new --lora_dir checkpoint/tsdsr --embedding_dir dataset/default --upscale 4 --process_size 256 --device cuda
+
+/workspace/miniconda/envs/vidaio/bin/python test/test_tsdsr.py --pretrained_model_name_or_path checkpoint/sd3 -i imgs/test/elk_frame.png -o outputs/new --lora_dir checkpoint/tsdsr --embedding_dir dataset/default --upscale 2 --process_size 128 --device cuda
+
+
+@vidaio_pipeline_test.py this is the way to use parallel workers
+
+simplified_vidaio_evaluation.py -> this is with scoring, 
+lets score the

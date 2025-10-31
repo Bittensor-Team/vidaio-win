@@ -1,0 +1,152 @@
+{
+  "vsr_results": {
+    "SD2HD": {
+      "task": "SD2HD",
+      "workers": 10,
+      "frames": 299,
+      "total_time": 5.942608833312988,
+      "frames_per_second": 50.31460228778146,
+      "seconds_per_frame": 0.01987494593081267,
+      "avg_inference_time": 0.04967608714925832,
+      "efficiency": 0.9005794930801133,
+      "output_video": "/tmp/vsr_SD2HD_10w_fixed.mp4",
+      "duration": 9.967,
+      "resolution": "1920x1080"
+    },
+    "SD24K": {
+      "task": "SD24K",
+      "workers": 8,
+      "frames": 299,
+      "total_time": 153.2593650817871,
+      "frames_per_second": 1.9509411372051435,
+      "seconds_per_frame": 0.5125731273638365,
+      "avg_inference_time": 0.0883427689140113,
+      "efficiency": 0.625490748747983,
+      "output_video": "/tmp/vsr_SD24K_8w.mp4",
+      "duration": 9.967,
+      "resolution": "3840x2160"
+    },
+    "HD24K": {
+      "task": "HD24K",
+      "workers": 12,
+      "frames": 299,
+      "total_time": 92.87702894210815,
+      "frames_per_second": 3.2193105594104634,
+      "seconds_per_frame": 0.310625514856549,
+      "avg_inference_time": 0.13866037567456563,
+      "efficiency": 0.6451170843515693,
+      "output_video": "/tmp/vsr_HD24K_12w.mp4",
+      "duration": 9.967,
+      "resolution": "3840x2160"
+    },
+    "4K28K": {
+      "task": "4K28K",
+      "workers": 8,
+      "frames": 299,
+      "total_time": 277.3498332500458,
+      "frames_per_second": 1.0780608608855209,
+      "seconds_per_frame": 0.9275914155519925,
+      "avg_inference_time": 0.513501819716306,
+      "efficiency": 0.7032830049242889,
+      "output_video": "/tmp/vsr_4K28K_8w.mp4",
+      "duration": 9.967,
+      "resolution": "7680x4320"
+    }
+  },
+  "evaluation_results": {
+    "SD2HD": {
+      "vsr_resolution": "1920x1080",
+      "original_path": "/tmp/input_480p.mp4",
+      "expected_resolution": "1920x1080",
+      "resolution_correct": true,
+      "psnr": 73.52912,
+      "ssim": 28.85,
+      "vmaf_score": 0.972728,
+      "vidaio_score": {
+        "vmaf_score": 73.52912,
+        "vmaf_percentage": 0.7352912,
+        "psnr": 28.85,
+        "ssim": 0.972728,
+        "pie_app_score": 0.46809433517307475,
+        "quality_score": 0.4522871248731429,
+        "length_score": 0.4154760001255846,
+        "pre_score": 0.4338815624993637,
+        "final_score": 0.06303748885927689,
+        "vmaf_check_passed": true
+      },
+      "performance": "\ud83d\udd34 Poor (-20% penalty)"
+    },
+    "SD24K": {
+      "vsr_resolution": "3840x2160",
+      "original_path": "/tmp/input_480p.mp4",
+      "expected_resolution": "3840x2160",
+      "resolution_correct": true,
+      "psnr": 73.85652,
+      "ssim": 28.88,
+      "vmaf_score": 0.980013,
+      "vidaio_score": {
+        "vmaf_score": 73.85652,
+        "vmaf_percentage": 0.7385652,
+        "psnr": 28.88,
+        "ssim": 0.980013,
+        "pie_app_score": 0.45243477726118564,
+        "quality_score": 0.4291325167096129,
+        "length_score": 0.4154760001255846,
+        "pre_score": 0.4223042584175988,
+        "final_score": 0.058144518255524316,
+        "vmaf_check_passed": true
+      },
+      "performance": "\ud83d\udd34 Poor (-20% penalty)"
+    },
+    "HD24K": {
+      "vsr_resolution": "3840x2160",
+      "original_path": "/tmp/input_1080p.mp4",
+      "expected_resolution": "3840x2160",
+      "resolution_correct": true,
+      "psnr": 74.03724,
+      "ssim": 28.95,
+      "vmaf_score": 0.982431,
+      "vidaio_score": {
+        "vmaf_score": 74.03724,
+        "vmaf_percentage": 0.7403723999999999,
+        "psnr": 28.95,
+        "ssim": 0.982431,
+        "pie_app_score": 0.4638865148324893,
+        "quality_score": 0.446040725666951,
+        "length_score": 0.4154760001255846,
+        "pre_score": 0.4307583628962678,
+        "final_score": 0.06167833906545625,
+        "vmaf_check_passed": true
+      },
+      "performance": "\ud83d\udd34 Poor (-20% penalty)"
+    },
+    "4K28K": {
+      "vsr_resolution": "7680x4320",
+      "original_path": "/tmp/input_4k.mp4",
+      "expected_resolution": "7680x4320",
+      "resolution_correct": true,
+      "psnr": 74.31328,
+      "ssim": 28.96,
+      "vmaf_score": 0.989032,
+      "vidaio_score": {
+        "vmaf_score": 74.31328,
+        "vmaf_percentage": 0.7431328,
+        "psnr": 28.96,
+        "ssim": 0.989032,
+        "pie_app_score": 0.45196360887267717,
+        "quality_score": 0.42844010112050473,
+        "length_score": 0.4154760001255846,
+        "pre_score": 0.4219580506230447,
+        "final_score": 0.05800419997497407,
+        "vmaf_check_passed": true
+      },
+      "performance": "\ud83d\udd34 Poor (-20% penalty)"
+    }
+  },
+  "summary": {
+    "total_tasks": 4,
+    "passed_vmaf": 4,
+    "correct_resolution": 4,
+    "good_performance": 0
+  }
+}

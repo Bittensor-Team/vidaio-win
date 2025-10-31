@@ -1,0 +1,35 @@
+name: video2x-realesrgan
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8
+  - opencv
+  - numpy
+  - pillow
+  - tqdm
+  - pip
+  - ffmpeg
+  - wget
+  - unzip
+  - curl
+  - pip:
+    - huggingface-hub
+    - basicsr
+    - realesrgan
+    - gfpgan
+    - facexlib
+    - fastapi
+    - uvicorn
+    - python-multipart
+
+
+
+
+
